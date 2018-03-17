@@ -102,7 +102,7 @@ Queries are expressive and composable:
                     .count())
 
     # Paginate the user table and show me page 3 (users 41-60).
-    User.select().order_by(User.username).paginate(3, 20)
+    users = User.select().order_by(User.username).paginate(3, 20).execute()
 
     # Order users by the number of tweets they've created:
     tweet_ct = fn.Count(Tweet.id)
