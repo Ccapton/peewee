@@ -113,7 +113,7 @@ Queries are expressive and composable:
              .order_by(tweet_ct.desc()))
 
     # Do an atomic update
-    Counter.update(count=Counter.count + 1).where(Counter.url == request.url)
+    Counter.update(count=Counter.count + 1).where(Counter.url == request.url).execute()
 
 Check out the `example app <http://docs.peewee-orm.com/en/latest/peewee/example.html>`_ for a working Twitter-clone website written with Flask.
 
